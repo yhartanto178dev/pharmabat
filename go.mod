@@ -3,6 +3,7 @@ module github.com/yhartanto178dev/pharmabot
 go 1.24.2
 
 require (
+	github.com/joho/godotenv v1.5.1
 	github.com/labstack/echo/v4 v4.13.3
 	go.mongodb.org/mongo-driver v1.17.3
 )
