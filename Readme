@@ -1,0 +1,79 @@
+# API Documentation
+
+## Endpoints
+
+### POST /api/v1/drugs
+
+Membuat obat baru.
+
+### POST /api/v1/end-users
+
+Membuat end user baru.
+
+### POST /api/v1/expirations
+
+Mencatat kadaluarsa obat.
+
+### GET /api/v1/export
+
+Export data ke CSV.
+
+## Manual Installation
+
+1. Clone repository:
+
+   ```bash
+   git clone https://github.com/yhartanto178dev/pharmabat.git
+   cd pharmabat
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   go mod tidy
+   ```
+
+3. Build the project:
+
+   ```bash
+   go build
+   ```
+
+4. Run the application for :
+   ```bash
+   ./main
+   ```
+5. For Development
+   Run
+   go run cmd/api/main.go
+
+   6. Ensure MongoDB is running:
+      Make sure MongoDB is installed and the service is active. You can start MongoDB using the following command:
+
+      ```bash
+      sudo systemctl start mongod
+      ```
+
+      Verify that MongoDB is running:
+
+      ```bash
+      sudo systemctl status mongod
+      ```
+
+   7. If using Docker/Podman:
+      You can run MongoDB using a container. Use the following command to start a MongoDB container:
+      ```bash
+      docker run -d --name mongodb -p 27017:27017 mongo
+      ```
+      Or, if using Podman:
+      ```bash
+      podman run -d --name mongodb -p 27017:27017 mongo
+      ```
+      Verify that the container is running:
+      ```bash
+      docker ps
+      ```
+      Or, for Podman:
+      ```bash
+      podman ps
+      ```

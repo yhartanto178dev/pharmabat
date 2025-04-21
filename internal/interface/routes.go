@@ -34,11 +34,11 @@ func RegisterRoutes(e *echo.Echo, db *mongo.Database) {
 	exportHandler := handlers.NewExportHandler(exportService)
 
 	// Register routes
-
+	ApiV1 := e.Group("/api/v1")
 	// Register routes
-	e.POST("/drugs", drugHandler.CreateDrug)
-	e.POST("/end-users", endUserHandler.CreateEndUser)
-	e.POST("/expirations", expHandler.CreateExpiration)
-	e.GET("/export", exportHandler.ExportCSV)
+	ApiV1.POST("/drugs", drugHandler.CreateDrug)
+	ApiV1.POST("/end-users", endUserHandler.CreateEndUser)
+	ApiV1.POST("/expirations", expHandler.CreateExpiration)
+	ApiV1.GET("/export", exportHandler.ExportCSV)
 
 }
