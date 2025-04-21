@@ -7,6 +7,16 @@ import (
 	"github.com/yhartanto178dev/pharmabot/internal/app/enduser"
 )
 
+// Make End User godoc
+//
+//	@Summary		Create a new End User
+//	@Description	Create a new End User
+//	@Tags			end-users
+//	@Accept			json
+//	@Produce		json
+//	@Param			end-user	body		enduser.CreateEndUserRequest	true	"Create End User"
+//	@Success		201			{object}	enduser.EndUser
+//	@Router			/end-users [post]
 type EndUserHandler struct {
 	service *enduser.Service
 }

@@ -8,6 +8,15 @@ import (
 	"github.com/yhartanto178dev/pharmabot/internal/app/drug"
 )
 
+// Make Drugs godoc
+//	@Summary		Create a new drug
+//	@Description	Create a new drug
+//	@Tags			drugs
+//	@Accept			json
+//	@Produce		json
+//	@Param			drug	body		drug.CreateDrugRequest	true	"Create drug"
+//	@Success		201		{object}	drug.Drug
+//	@Router			/drugs [post]
 type DrugHandler struct {
 	service *drug.Service
 }

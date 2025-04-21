@@ -11,6 +11,20 @@ import (
 	"github.com/yhartanto178dev/pharmabot/internal/app/export"
 )
 
+// Make Export godoc
+//
+//	@Summary		Export data to CSV
+//	@Description	Export data to CSV
+//	@Tags			export
+//	@Accept			json
+//	@Produce		json
+//	@Success		200	{object}	export.ExportReport
+//	@Router			/export [get]
+//	@Param			drugID			body	string	false	"Drug ID"
+//	@Param			endUserID		body	string	false	"End User ID"
+//	@Param			expirationDate	body	string	false	"Expiration Date"
+//	@Param			quantity		body	int		false	"Quantity"
+
 type ExportHandler struct {
 	service *export.Service
 }

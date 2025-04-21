@@ -3,6 +3,8 @@ package interfaces
 
 import (
 	"github.com/labstack/echo/v4"
+	echoSwagger "github.com/swaggo/echo-swagger" // echo-swagger middleware
+	_ "github.com/swaggo/echo-swagger/example/docs"
 	"github.com/yhartanto178dev/pharmabot/internal/app/drug"
 	"github.com/yhartanto178dev/pharmabot/internal/app/enduser"
 	"github.com/yhartanto178dev/pharmabot/internal/app/expiration"
@@ -33,6 +35,9 @@ func RegisterRoutes(e *echo.Echo, db *mongo.Database) {
 	// Initialize handlers
 	exportHandler := handlers.NewExportHandler(exportService)
 
+	// Set up middleware for error handling
+	e.HTTPErrorHandler = handlers.CustomHTTPErrorHandler
+
 	// Register routes
 	ApiV1 := e.Group("/api/v1")
 	// Register routes
@@ -40,5 +45,6 @@ func RegisterRoutes(e *echo.Echo, db *mongo.Database) {
 	ApiV1.POST("/end-users", endUserHandler.CreateEndUser)
 	ApiV1.POST("/expirations", expHandler.CreateExpiration)
 	ApiV1.GET("/export", exportHandler.ExportCSV)
+	ApiV1.GET("/swagger/*", echoSwagger.WrapHandler) // Swagger UI
 
 }

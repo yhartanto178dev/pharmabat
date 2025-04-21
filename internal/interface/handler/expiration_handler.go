@@ -9,6 +9,17 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
+// Make Expiration godoc
+//
+//	@Summary		Create a new Expiration
+//	@Description	Create a new Expiration
+//	@Tags			expirations
+//	@Accept			json
+//	@Produce		json
+//	@Param			expiration	body		expiration.CreateExpirationRequest	true	"Create Expiration"
+//	@Success		201			{object}	expiration.Expiration
+//	@Router			/expirations [post]
+
 type ExpirationHandler struct {
 	service *expiration.Service
 }

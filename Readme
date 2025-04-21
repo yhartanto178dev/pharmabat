@@ -45,7 +45,7 @@ Export data ke CSV.
    ```
 5. For Development
    Run
-   go run cmd/api/main.go
+   go run main.go
 
    6. Ensure MongoDB is running:
       Make sure MongoDB is installed and the service is active. You can start MongoDB using the following command:
